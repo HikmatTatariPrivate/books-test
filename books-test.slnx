@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="books-test.client/books-test.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="books-test.Server/books-test.Server.csproj" />
+</Solution>

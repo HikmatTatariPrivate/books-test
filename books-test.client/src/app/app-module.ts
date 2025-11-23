@@ -6,14 +6,23 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Login } from './auth/login';
+import { SignUp } from './auth/signup';
+
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Login,
+    SignUp
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
     NgbModule,
     FontAwesomeModule
   ],

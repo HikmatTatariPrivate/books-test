@@ -14,9 +14,14 @@ export class MainPage {
   faLogout = faRightFromBracket;
   active = 'books';
 
-  constructor( private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
-
+  ngOnInit(): void {
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      this.router.navigate(['/']);
+    }
+  }
 
   logout() {
     this.auth.clearTokens();

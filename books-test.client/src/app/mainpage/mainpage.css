@@ -1,21 +1,23 @@
-.logout-top-right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.header-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }
 
 .logout-btn {
+  justify-content: flex-end;
+  color: #007bff;
+  margin-left: auto;
   background: transparent;
   border: none;
   font-size: 16px;
   cursor: pointer;
-  color: inherit; /* uses your page text color */
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.logout-btn:hover {
+  .logout-btn:hover {
     opacity: 0.7;
-}
+  }
 

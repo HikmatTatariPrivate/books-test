@@ -9,6 +9,7 @@ namespace books_test.Server.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
-
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Citation> Citations { get; set; }
     }
 }

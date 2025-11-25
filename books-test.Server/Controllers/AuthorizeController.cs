@@ -21,8 +21,8 @@ namespace books_test.Server.Controllers
             _tokenService = tokenService;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(User user)
+        [HttpPost("signup")]
+        public async Task<IActionResult> Signup(User user)
         {
             _context.Users.Add(user);
             try
@@ -31,10 +31,10 @@ namespace books_test.Server.Controllers
             }
             catch (DbUpdateException)
             {
-                return Conflict("Username already exists");
+                return Conflict(new { message = "Username already taken" });
             }
 
-            return Ok("User registered");
+            return Ok(new {message = "User registered"});
         }
 
         [HttpPost("login")]

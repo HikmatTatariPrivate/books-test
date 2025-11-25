@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +6,6 @@ import { Component, signal, OnInit } from '@angular/core';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App implements OnInit {
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-  }
-
+export class App  {
   protected readonly title = signal('books-test.client');
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class Login {
   title = "Sign in"
+  submitError = ""
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { }
   form: any;
-
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -22,8 +23,8 @@ export class Login {
     });
   }
 
-
   submit() {
+    this.submitError = ""
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -32,5 +33,15 @@ export class Login {
       username: this.form.value.username,
       password: this.form.value.password
     };
+
+    this.auth.login(payload).subscribe({
+      next: (tokens) => {
+        this.auth.storeTokens(tokens);
+        this.router.navigate(['/mainpage']);
+      },
+      error: () => {
+        this.submitError = 'Login failed. Please check your credentials and try again.';
+      }
+    });
   }
 }

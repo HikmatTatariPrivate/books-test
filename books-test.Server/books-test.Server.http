@@ -1,4 +1,4 @@
-@books_test.Server_HostAddress = http://localhost:5238
+@books_test.Server_HostAddress = https://localhost:5238
 
 GET {{books_test.Server_HostAddress}}/test/
 Accept: application/json

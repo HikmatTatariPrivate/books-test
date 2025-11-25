@@ -4,6 +4,23 @@
   </button>
 </div>
 
+<div class="d-flex pt-5">
+  <div ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills flex-column" orientation="vertical">
+    <ng-container ngbNavItem="books">
+      <button ngbNavLink>Books</button>
+      <ng-template ngbNavContent>
+        <app-books></app-books>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem="citations">
+      <button ngbNavLink>Citations</button>
+      <ng-template ngbNavContent>
+        <app-citations></app-citations>
+      </ng-template>
+    </ng-container>
 
-<h1>Main Page</h1>
+  </div>
+
+  <div [ngbNavOutlet]="nav" class="ms-4"></div>
+</div>
 

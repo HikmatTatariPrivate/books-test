@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth-service';
-
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-books',
@@ -9,6 +9,10 @@ import { AuthService } from '../../services/auth-service';
   styleUrl: './books.css',
 })
 export class Books {
-  constructor( private auth: AuthService) { }
+  faPlus = faPlus;
+  constructor(private auth: AuthService) { }
+
+  addBook() {
+  }
   
 }

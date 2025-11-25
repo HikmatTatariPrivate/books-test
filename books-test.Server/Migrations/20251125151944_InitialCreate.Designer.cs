@@ -11,7 +11,7 @@ using books_test.Server.Data;
 namespace books_test.Server.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20251124145417_InitialCreate")]
+    [Migration("20251125151944_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -23,6 +23,56 @@ namespace books_test.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("books_test.Server.Model.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserUsername")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserUsername");
+
+                    b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("books_test.Server.Model.Citation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserUsername")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserUsername");
+
+                    b.ToTable("Citations");
+                });
 
             modelBuilder.Entity("books_test.Server.Model.RefreshToken", b =>
                 {
@@ -63,6 +113,28 @@ namespace books_test.Server.Migrations
                     b.HasKey("Username");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("books_test.Server.Model.Book", b =>
+                {
+                    b.HasOne("books_test.Server.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserUsername")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("books_test.Server.Model.Citation", b =>
+                {
+                    b.HasOne("books_test.Server.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserUsername")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("books_test.Server.Model.RefreshToken", b =>

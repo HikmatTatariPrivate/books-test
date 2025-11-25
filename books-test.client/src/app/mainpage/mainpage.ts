@@ -3,6 +3,7 @@ import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth-service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-mainpage',
   standalone: false,
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class MainPage {
   faLogout = faRightFromBracket;
+  active = 'books';
 
   constructor( private auth: AuthService, private router: Router) { }
 

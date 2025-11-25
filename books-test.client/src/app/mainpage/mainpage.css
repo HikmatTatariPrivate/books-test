@@ -15,6 +15,7 @@
   gap: 5px;
 }
 
-  .logout-btn:hover {
+.logout-btn:hover {
     opacity: 0.7;
-  }
+}
+

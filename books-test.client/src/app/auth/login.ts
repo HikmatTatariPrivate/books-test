@@ -21,6 +21,11 @@ export class Login {
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+
+    const token = localStorage.getItem('access_token');
+    if (token) {
+       this.router.navigate(['/mainpage']);
+    }
   }
 
   submit() {

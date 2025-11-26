@@ -37,3 +37,42 @@
   .add-book-btn fa-icon {
     font-size: 16px;
   }
+
+.table-wrapper {
+  padding: 25px; 
+}
+
+
+.table {
+  background: white;
+}
+
+.book-form {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 48px;
+}
+
+  .book-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .book-form input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+.form-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}

@@ -1,10 +1,69 @@
-  <div class="books-header">
-    <button class="add-book-btn" (click)="addBook()">
-      <fa-icon [icon]="faPlus"></fa-icon>
-      Add New Book
-    </button>
-  </div>
+<div class="books-header">
+  <button class="add-book-btn" (click)="addNewBookBtn()">
+    <fa-icon [icon]="faPlus"></fa-icon>
+    Add New Book
+  </button>
+</div>
 
-  <div class="books-content">
-    <!-- your books table, cards, list, etc -->
-  </div>
+<div *ngIf="showForm" class="book-form">
+
+  <form (ngSubmit)="submitForm()">
+    <label>
+      Title:
+      <input type="text" [(ngModel)]="newBook.title" name="title" required />
+    </label>
+
+    <label>
+      Author:
+      <input type="text" [(ngModel)]="newBook.author" name="author" required />
+    </label>
+
+    <label>
+      Price:
+      <input type="number" [(ngModel)]="newBook.price" name="price" required />
+    </label>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelForm()">Cancel</button>
+    </div>
+  </form>
+
+</div>
+
+<div *ngIf="!showForm" class="table-wrapper">
+
+  <!-- ⬇ Bootstrap Table -->
+  <table class="table table-hover table-bordered mt-3">
+    <thead class="table-light">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let book of books; let i = index">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.price }}</td>
+
+        <td class="text-center">
+          <button class="btn btn-sm btn-primary me-2"
+                  (click)="editBook(book.id)">
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+
+          <button class="btn btn-sm btn-danger"
+                  (click)="deleteBook(book.id)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+

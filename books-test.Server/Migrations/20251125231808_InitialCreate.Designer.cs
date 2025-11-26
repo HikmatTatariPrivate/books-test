@@ -11,7 +11,7 @@ using books_test.Server.Data;
 namespace books_test.Server.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20251125151944_InitialCreate")]
+    [Migration("20251125231808_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

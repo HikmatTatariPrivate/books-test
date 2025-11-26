@@ -11,7 +11,7 @@ import { SignUp } from './auth/signup';
 import { MainPage } from './mainpage/mainpage'; 
 
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authorizeInterceptor } from './authorize-interceptor';
 import { Books } from './books/books';
 import { Citations } from './citations/citations';
@@ -32,6 +32,7 @@ import { Citations } from './citations/citations';
     RouterModule,
     ReactiveFormsModule,
     NgbModule,
+    FormsModule,
     FontAwesomeModule
   ],
   providers: [

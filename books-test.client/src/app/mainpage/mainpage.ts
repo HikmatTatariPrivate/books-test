@@ -26,8 +26,6 @@ export class MainPage {
   logout() {
     this.auth.clearTokens();
     this.router.navigate(['/']);
-
-
   }
   
 }

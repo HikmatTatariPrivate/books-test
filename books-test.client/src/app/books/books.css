@@ -13,31 +13,6 @@
 }
 
 
-.add-book-btn {
-  background-color: transparent;
-  color: #007bff;
-  border: 1px solid;
-  padding: 8px 14px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-  .add-book-btn:hover {
-    background-color: #e6f0ff; /* light blue background on hover */
-    color: #0056b3; /* darker blue text on hover */
-    border-color: #0056b3; /* match text on hover */
-  }
-
-
-  .add-book-btn fa-icon {
-    font-size: 16px;
-  }
-
 .table-wrapper {
   padding: 25px; 
 }

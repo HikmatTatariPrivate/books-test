@@ -31,7 +31,7 @@ namespace books_test.Server.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<int>(type: "int", nullable: true),
-                    UserUsername = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserUsername = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,8 +40,7 @@ namespace books_test.Server.Migrations
                         name: "FK_Books_Users_UserUsername",
                         column: x => x.UserUsername,
                         principalTable: "Users",
-                        principalColumn: "Username",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Username");
                 });
 
             migrationBuilder.CreateTable(
@@ -51,7 +50,7 @@ namespace books_test.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserUsername = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserUsername = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -60,8 +59,7 @@ namespace books_test.Server.Migrations
                         name: "FK_Citations_Users_UserUsername",
                         column: x => x.UserUsername,
                         principalTable: "Users",
-                        principalColumn: "Username",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Username");
                 });
 
             migrationBuilder.CreateTable(

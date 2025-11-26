@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { Book, BooksService } from '../../services/books-service';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Book, BooksService } from '../../services/books-service';
 
 @Component({
   selector: 'app-books',

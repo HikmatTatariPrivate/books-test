@@ -1,8 +1,12 @@
-﻿namespace books_test.Server.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace books_test.Server.Model
 {
     public class RefreshToken
     {
         public int Id { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string UserUsername { get; set; } // Foreign key to User table
         public string TokenId { get; set; }
         public string RefreshUserToken { get; set; }

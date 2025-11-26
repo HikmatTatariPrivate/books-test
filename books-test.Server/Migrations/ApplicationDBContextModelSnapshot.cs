@@ -39,7 +39,6 @@ namespace books_test.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserUsername")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -61,7 +60,6 @@ namespace books_test.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserUsername")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -116,9 +114,7 @@ namespace books_test.Server.Migrations
                 {
                     b.HasOne("books_test.Server.Model.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserUsername")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserUsername");
 
                     b.Navigation("User");
                 });
@@ -127,9 +123,7 @@ namespace books_test.Server.Migrations
                 {
                     b.HasOne("books_test.Server.Model.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserUsername")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserUsername");
 
                     b.Navigation("User");
                 });

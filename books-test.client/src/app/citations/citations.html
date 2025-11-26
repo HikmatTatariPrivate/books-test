@@ -1,1 +1,55 @@
-<p>Citations</p>
+<div class="citations-header">
+  <button class="add-citation-btn" (click)="addNewCitationBtn()">
+    <fa-icon [icon]="faPlus"></fa-icon>
+    Add New Citation
+  </button>
+</div>
+
+<div *ngIf="showForm" class="citation-form">
+
+  <form (ngSubmit)="submitForm()">
+    <label>
+      Title:
+      <input type="text" [(ngModel)]="newCitation.text" name="citation" required />
+    </label>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelForm()">Cancel</button>
+    </div>
+  </form>
+
+</div>
+
+<div *ngIf="!showForm" class="table-wrapper">
+
+  <!-- ⬇ Bootstrap Table -->
+  <table class="table table-hover table-bordered mt-3">
+    <thead class="table-light">
+      <tr>
+        <th>Citation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let citation of citations; let i = index">
+        <td>{{ citation.text }}</td>
+
+        <td class="text-center">
+          <button class="btn btn-sm btn-primary me-2"
+                  (click)="editCitation(citation.id)">
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>
+
+          <button class="btn btn-sm btn-danger"
+                  (click)="deleteCitation(citation.id)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -46,11 +46,11 @@
 
     <tbody>
       <tr *ngFor="let book of books; let i = index">
-        <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
-        <td>{{ book.price }}</td>
+        <td class="table-col">{{ book.title }}</td>
+        <td class="table-col">{{ book.author }}</td>
+        <td class="table-col">{{ book.price }}</td>
 
-        <td class="text-center">
+        <td class="action-col">
           <button class="btn btn-sm btn-primary me-2"
                   (click)="editBook(book.id)">
             <fa-icon [icon]="faEdit"></fa-icon>

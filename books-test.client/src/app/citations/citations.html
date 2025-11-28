@@ -27,8 +27,8 @@
   <table class="table table-hover table-bordered mt-3">
     <thead class="table-light">
       <tr>
-        <th>Citation</th>
-        <th>Action</th>
+        <th class="table-col">Citation</th>
+        <th >Action</th>
       </tr>
     </thead>
 
@@ -36,7 +36,7 @@
       <tr *ngFor="let citation of citations; let i = index">
         <td>{{ citation.text }}</td>
 
-        <td class="text-center">
+        <td class="action-col">
           <button class="btn btn-sm btn-primary me-2"
                   (click)="editCitation(citation.id)">
             <fa-icon [icon]="faEdit"></fa-icon>

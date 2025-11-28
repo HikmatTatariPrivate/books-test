@@ -13,7 +13,7 @@ export interface Citation {
 })
 export class CitationsService {
 
-  private apiUrl = 'https://localhost:5238/api/citations';
+  private apiUrl = 'https://books-test-server-e8akczebfghrgyhb.swedencentral-01.azurewebsites.net/api/citations';
 
   constructor(private http: HttpClient) { }
 

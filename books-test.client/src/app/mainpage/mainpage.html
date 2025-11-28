@@ -1,8 +1,9 @@
-<div class="header-bar">
+<head class="header-bar">
+  <meta name="viewport" content="width=700" />
   <button class="logout-btn" (click)="logout()">
     <fa-icon [icon]="faLogout"></fa-icon> Logout
   </button>
-</div>
+</head>
 
 <div class="d-flex pt-5 flex-grow-1 w-100">
   <div ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills flex-column" orientation="vertical">

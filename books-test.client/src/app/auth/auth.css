@@ -1,82 +1,83 @@
 .app-title {
-  font-size: 1.4rem;
+  font-size: 1.4rem; /* scalable */
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 24px; /* px for spacing */
   color: #2575fc;
   text-transform: uppercase;
   letter-spacing: 1px;
+  word-break: break-word;
 }
 
 .login-container {
   background: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 32px; /* px */
+  border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
-  margin: 3rem auto;
+  width: 90%;
+  max-width: 450px;
+  margin: 48px auto; /* px */
   text-align: center;
   animation: fadeIn 0.8s ease-in-out;
 }
 
-.login-container h1 {
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  color: #333;
-}
+  .login-container h1 {
+    margin-bottom: 24px;
+    font-size: 1.8rem; /* scalable */
+    color: #333;
+  }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 16px; /* px */
   text-align: left;
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  color: #555;
-}
+  .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+  }
 
-.form-group input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.3s;
-}
+  .form-group input {
+    width: 100%;
+    padding: 12px; /* px */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem; /* scalable */
+    outline: none;
+    transition: all 0.3s;
+  }
 
-.form-group input:focus {
-   border-color: #2575fc;
-   box-shadow: 0 0 6px rgba(37, 117, 252, 0.3);
-}
+    .form-group input:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 6px rgba(37, 117, 252, 0.3);
+    }
 
 .btn {
   width: 100%;
-  padding: 0.75rem;
+  padding: 12px; 
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1rem; 
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .extra-links {
-  margin-top: 1rem;
-  font-size: 0.85rem;
+  margin-top: 48px; 
+  font-size: 1rem;
 }
 
-.extra-links a {
-  color: #2575fc;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+  .extra-links a {
+    color: #2575fc;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
 
-.extra-links a:hover {
-  color: #6a11cb;
-  text-decoration: underline;
-}
+    .extra-links a:hover {
+      color: #6a11cb;
+      text-decoration: underline;
+    }
 
 @keyframes fadeIn {
   from {
@@ -92,10 +93,10 @@
 
 .error {
   color: red;
-  font-size: 0.85em;
+  font-size: 1rem;
   margin-top: 4px;
 }
 
-.error small {
-  display: block;
-}
+  .error small {
+    display: block;
+  }

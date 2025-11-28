@@ -15,7 +15,7 @@ export interface SignupResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:5238/api/authorize';
+  private apiUrl = 'https://books-test-server-e8akczebfghrgyhb.swedencentral-01.azurewebsites.net/api/authorize';
 
   constructor(private http: HttpClient) { }
 

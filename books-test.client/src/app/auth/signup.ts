@@ -45,7 +45,11 @@ export class SignUp {
         this.router.navigate(['/']);
       },
       error: (error: HttpErrorResponse) => {
-        this.submitError = error.error.message;
+        if (error.status === 0) {
+          this.submitError = error?.error?.message;
+        } else {
+          this.submitError = error?.message;
+        }
       }
     });
   }

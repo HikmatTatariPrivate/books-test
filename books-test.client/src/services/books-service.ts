@@ -15,7 +15,7 @@ export interface Book {
 })
 export class BooksService {
 
-  private apiUrl = 'https://localhost:5238/api/books';
+  private apiUrl = 'https://books-test-server-e8akczebfghrgyhb.swedencentral-01.azurewebsites.net/api/books';
 
   constructor(private http: HttpClient) { }
 

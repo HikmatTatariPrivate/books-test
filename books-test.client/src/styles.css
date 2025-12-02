@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+/* Light Theme Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #1976d2;
+  --secondary-color: #f50057;
+  --card-bg: #f0f0f0;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #90caf9;
+  --secondary-color: #f48fb1;
+  --card-bg: #1e1e1e;
+}
+
+/* Global styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  height: auto;
+  transition: background-color 0.3s, color 0.3s;
+}

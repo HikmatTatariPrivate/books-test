@@ -8,7 +8,7 @@
 <div *ngIf="showForm" class="citation-form">
 
   <form (ngSubmit)="submitForm()">
-    <label>
+    <label style="color:#555">
       Title:
       <input type="text" [(ngModel)]="newCitation.text" name="citation" required />
     </label>

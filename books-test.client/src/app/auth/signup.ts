@@ -45,7 +45,7 @@ export class SignUp {
         this.router.navigate(['/']);
       },
       error: (error: HttpErrorResponse) => {
-        if (error.status === 0) {
+        if (error.status === 409) {
           this.submitError = error?.error?.message;
         } else {
           this.submitError = error?.message;

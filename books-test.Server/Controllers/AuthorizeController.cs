@@ -34,6 +34,42 @@ namespace books_test.Server.Controllers
                 return Conflict(new { message = "Username already taken" });
             }
 
+            var citation1 = new Citation
+            {
+                Text = "To be, or not to be: that is the question.",
+                UserUsername = user.Username
+            };
+            var citation2 = new Citation
+            {
+                Text = "So we beat on, boats against the current…",
+                UserUsername = user.Username
+            };
+            var citation3 = new Citation
+            {
+                Text = "Don’t ever tell anybody anything.",
+                UserUsername = user.Username
+            };
+            var citation4 = new Citation
+            {
+                Text = "You see, but you do not observe.",
+                UserUsername = user.Username
+            };
+            var citation5 = new Citation
+            {
+                Text = "The secret of getting ahead is getting started.",
+                UserUsername = user.Username
+            };
+
+
+            _context.Citations.Add(citation1);
+            _context.Citations.Add(citation2);
+            _context.Citations.Add(citation3);
+            _context.Citations.Add(citation4);
+            _context.Citations.Add(citation5);
+
+            await _context.SaveChangesAsync();
+
+
             return Ok(new {message = "User registered"});
         }
 

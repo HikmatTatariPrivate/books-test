@@ -8,17 +8,17 @@
 <div *ngIf="showForm" class="book-form">
 
   <form (ngSubmit)="submitForm()">
-    <label>
+    <label style="color:#555">
       Title:
       <input type="text" [(ngModel)]="newBook.title" name="title" required />
     </label>
 
-    <label>
+    <label style="color:#555">
       Author:
       <input type="text" [(ngModel)]="newBook.author" name="author" required />
     </label>
 
-    <label>
+    <label style="color:#555">
       Price:
       <input type="number" [(ngModel)]="newBook.price" name="price" required />
     </label>
@@ -33,6 +33,7 @@
 
 <div *ngIf="!showForm" class="table-wrapper">
 
+  
   <!-- ⬇ Bootstrap Table -->
   <table class="table table-hover table-bordered mt-3">
     <thead class="table-light">
